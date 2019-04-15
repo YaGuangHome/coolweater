@@ -7,7 +7,7 @@ import org.litepal.crud.LitePalSupport;
 public class City extends LitePalSupport {
     private int id;//城市id
     private String cityName;//城市名字
-    private String cityCode;//城市代码
+    private int cityCode;//城市代码
     private int provinceId;//城市所在的省份ID
 
     public int getId() {
@@ -26,11 +26,11 @@ public class City extends LitePalSupport {
         this.cityName = cityName;
     }
 
-    public String getCityCode() {
+    public int getCityCode() {
         return cityCode;
     }
 
-    public void setCityCode(String cityCode) {
+    public void setCityCode(int cityCode) {
         this.cityCode = cityCode;
     }
 

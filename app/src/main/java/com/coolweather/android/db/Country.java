@@ -5,7 +5,7 @@ import org.litepal.crud.LitePalSupport;
 public class Country extends LitePalSupport {
     private int id;//农村ID
     private String countryName;//农村名字
-    private String countryCode;//农村代码
+    private int countryCode;//农村代码
     private int cityId;//农村对应的城市ID
 
     public int getId() {
@@ -24,11 +24,11 @@ public class Country extends LitePalSupport {
         this.countryName = countryName;
     }
 
-    public String getCountryCode() {
+    public int getCountryCode() {
         return countryCode;
     }
 
-    public void setCountryCode(String countryCode) {
+    public void setCountryCode(int countryCode) {
         this.countryCode = countryCode;
     }
 
