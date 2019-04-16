@@ -18,13 +18,6 @@ public class HttpUtil {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(address).build();
         client.newCall(request).enqueue(callback);
-    }    /**
-     * 向服务器发送请求
-     * @param address  请求地址
-        */
-    public Response sendOkHttpRequest(String address) throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url(address).build();
-        return client.newCall(request).execute();
+
     }
 }

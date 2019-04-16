@@ -163,41 +163,6 @@ public class ChooseAreaFragment extends Fragment {
             queryFromServer(address,countryType);
         }
     }
-
-    private void queryFromServer1(String address,final String type){
-        showProgressDialog();
-        try {
-            HttpUtil httpUtil = new HttpUtil();
-            Response response = httpUtil.sendOkHttpRequest(address);
-            String responseText = response.body().string();
-            boolean result = false;
-            if(type.equals(provinceType)){
-                result = Utility.handleProvinceResponse(responseText);
-            }else if(type.equals(cityType)){
-                result = Utility.handleCityResponse(responseText
-                        ,selectProvince.getId());
-            }else if(type.equals(countryType)){
-                result = Utility.handleCountryResponse(responseText,selectCity.getId());
-            }
-            if(result){
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        closeProgressDialog();
-                        if(type.equals(provinceType)){
-                            queryProvinces();
-                        }else if(type.equals(cityType)){
-                            queryCitys();
-                        }else if(type.equals(countryType)){
-                            queryCountrys();
-                        }
-                    }
-                });
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     /**
      * 根据传入的地址和类型，查询数据省市县 数据
      * @param address

@@ -7,6 +7,16 @@ public class Country extends LitePalSupport {
     private String countryName;//农村名字
     private int countryCode;//农村代码
     private int cityId;//农村对应的城市ID
+    private String weatherId;//天气ID
+
+    public String getWeatherId() {
+        return weatherId;
+    }
+
+    public void setWeatherId(String weatherId) {
+        this.weatherId = weatherId;
+    }
+
 
     public int getId() {
         return id;
