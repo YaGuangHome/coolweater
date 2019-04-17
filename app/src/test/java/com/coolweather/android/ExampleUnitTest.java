@@ -2,6 +2,7 @@ package com.coolweather.android;
 
 import android.os.SystemClock;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 
@@ -66,6 +67,28 @@ public class ExampleUnitTest {
     }
     @Test
     public void demo(){
+        String string = "http://guolin.tech/api/weather?cityid=CN101090303&key=3af40111ca8344e7906cc56428ae2ef5";
+        OkHttpClient client = new OkHttpClient();
+//        Request request = new Request.Builder().build();
 
+        final Request request = new Request.Builder().url(string).build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                System.out.println("1111111");
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                System.out.println("22222");
+//                System.out.println(response.body().string());
+//            }
+//        });
     }
 }
